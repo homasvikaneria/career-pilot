@@ -15,10 +15,14 @@ const ResumeCTA = () => {
           just like a perfect cup of coffee.
         </p>
 
-        <button className="bg-[#D2691E] hover:bg-[#BF5B17] hover:scale-105 transition-all duration-300 text-white px-10 py-4 rounded-full text-lg md:text-xl font-semibold shadow-xl">
-          Download Resume
-        </button>
-
+       <a
+  href="/resume.pdf"
+  download
+  aria-label="Download Resume"
+  className="inline-block bg-[#D2691E] hover:bg-[#BF5B17] hover:scale-105 transition-all duration-300 text-white px-10 py-4 rounded-full text-lg md:text-xl font-semibold shadow-xl"
+>
+  Download Resume
+</a>
       </div>
     </section>
   );
