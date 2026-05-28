@@ -1,3 +1,10 @@
+# [1.75.0](https://github.com/anurag3407/career-pilot/compare/v1.74.0...v1.75.0) (2026-05-28)
+
+
+### Features
+
+* implement Swiss Typography portfolio template ([9f27af7](https://github.com/anurag3407/career-pilot/commit/9f27af7f32af671c5dc22f0adf7838dfa421caac))
+
 # [1.74.0](https://github.com/anurag3407/career-pilot/compare/v1.73.0...v1.74.0) (2026-05-28)
 
 
