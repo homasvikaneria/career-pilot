@@ -1,3 +1,15 @@
+# [1.61.0](https://github.com/anurag3407/career-pilot/compare/v1.60.0...v1.61.0) (2026-05-28)
+
+
+### Bug Fixes
+
+* improve Playing Cards template color scheme ([54119ee](https://github.com/anurag3407/career-pilot/commit/54119ee6e3308c961175f08bd3660873ab9d4b18))
+
+
+### Features
+
+* add Playing Cards portfolio template [#1970](https://github.com/anurag3407/career-pilot/issues/1970) ([14dbb87](https://github.com/anurag3407/career-pilot/commit/14dbb87c4a06bfdda51281e7cce6636d9f447a1a))
+
 # [1.60.0](https://github.com/anurag3407/career-pilot/compare/v1.59.0...v1.60.0) (2026-05-28)
 
 
