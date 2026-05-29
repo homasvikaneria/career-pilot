@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Main Application Component with Route-based Code Splitting
  * Implements lazy loading for improved performance
  */
@@ -34,6 +34,7 @@ const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const CookiePolicy = lazy(() => import('./pages/CookiePolicy'));
 import LegalPageErrorBoundary from './components/LegalPageErrorBoundary';
 import RouteErrorBoundary from './components/RouteErrorBoundary';
+import AppErrorBoundary from './components/AppErrorBoundary';
 
 // Hub Imports
 const GitHubDashboard = lazy(() => import('./pages/GitHubDashboard'));
@@ -106,6 +107,7 @@ function AppRoutes() {
 
   return (
     <BrowserRouter>
+      <AppErrorBoundary>
       <ScrollToTop />
       {!!user && (
         <CommandPalette
@@ -294,6 +296,7 @@ function AppRoutes() {
         {/* Catch-All Route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </AppErrorBoundary>
     </BrowserRouter>
   );
 }
