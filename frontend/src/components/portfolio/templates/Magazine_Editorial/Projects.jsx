@@ -467,7 +467,7 @@ export default function Projects() {
               lineHeight: 1.65,
             }}
           >
-            Six craft experiments, drifting in orbit. Each card a printed page —
+            Ten craft experiments, drifting in orbit. Each card a printed page —
             weightless, editorial, alive.
           </p>
         </header>
