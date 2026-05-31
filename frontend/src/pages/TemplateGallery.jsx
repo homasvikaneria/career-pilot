@@ -4,6 +4,13 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import DeployModal from "../components/portfolio/DeployModal";
 import ThemeSelector from "../components/portfolio/ThemeSelector";
+import HolographicAbout from "../components/portfolio/templates/Holographic/About";
+import CulinaryAbout from "../components/portfolio/templates/Culinary_Restaurant/About";
+import TechStartupHero from "../components/portfolio/templates/Tech_Startup/Hero";
+import GeometricShapesAbout from "../components/portfolio/templates/Geometric_Shapes/About";
+import ChooseAdventurePortfolio from "../components/portfolio/templates/Choose_Adventure/index";
+import WeatherMood from "../components/portfolio/templates/Weather_Mood/index";
+import SwissTypography from "../components/portfolio/templates/Swiss_Typography/index";
 import DesertDunes from "../components/portfolio/templates/Desert_Dunes/index";
 
 export default function TemplateGallery() {
@@ -227,7 +234,90 @@ export default function TemplateGallery() {
         portfolioTitle={selectedPortfolioTitle}
       />
 
-      {/* Desert Dunes Template Preview */}
+      <div className="mt-12">
+        <div className="mb-4 flex items-center gap-3 px-1">
+          <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-400 border border-cyan-500/30">
+            Preview
+          </span>
+          <h2 className="text-lg font-semibold text-foreground/70">Holographic Theme — About Section</h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border">
+          <HolographicAbout />
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <div className="mb-4 flex items-center gap-3 px-1">
+          <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-400 border border-amber-500/30">
+            Preview
+          </span>
+          <h2 className="text-lg font-semibold text-foreground/70">Geometric Shapes Theme — About Section</h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border">
+          <GeometricShapesAbout />
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <div className="mb-4 flex items-center gap-3 px-1">
+          <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-400 border border-amber-500/30">
+            Preview
+          </span>
+          <h2 className="text-lg font-semibold text-foreground/70">Culinary Restaurant Theme — About Section</h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border">
+          <CulinaryAbout />
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <div className="mb-4 flex items-center gap-3 px-1">
+          <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-cyan-400 border border-cyan-500/30">
+            Preview
+          </span>
+          <h2 className="text-lg font-semibold text-foreground/70">Tech Startup Theme — Hero Section</h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-cyan-500/20">
+          <TechStartupHero />
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <div className="mb-4 flex items-center gap-3 px-1">
+          <span className="rounded-full bg-violet-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-violet-400 border border-violet-500/30">
+            Preview
+          </span>
+          <h2 className="text-lg font-semibold text-foreground/70">Choose Adventure Theme — Full Interactive Template</h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border">
+          <ChooseAdventurePortfolio />
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <div className="mb-4 flex items-center gap-3 px-1">
+          <span className="rounded-full bg-sky-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-sky-400 border border-sky-500/30">
+            Preview
+          </span>
+          <h2 className="text-lg font-semibold text-foreground/70">Weather Mood Theme — Full Interactive Template</h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border">
+          <WeatherMood />
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <div className="mb-4 flex items-center gap-3 px-1">
+          <span className="rounded-full bg-red-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-red-400 border border-red-500/30">
+            Preview
+          </span>
+          <h2 className="text-lg font-semibold text-foreground/70">Swiss Typography — Full Interactive Template</h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border">
+          <SwissTypography />
+        </div>
+      </div>
+
       <div className="mt-12">
         <div className="mb-4 flex items-center gap-3 px-1">
           <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-400 border border-amber-500/30">
