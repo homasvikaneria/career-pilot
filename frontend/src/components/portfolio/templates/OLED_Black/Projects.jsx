@@ -34,12 +34,12 @@ const ProjectCard = ({ project, index }) => (
         <h3 className="text-2xl font-semibold text-white transition-colors group-hover:text-cyan-400">{project.title}</h3>
         <div className="flex gap-3 text-gray-500">
           {project.githubUrl && (
-            <a href={project.githubUrl} className="transition-colors hover:text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(34,211,238,0.8)]">
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(34,211,238,0.8)]">
               <Github size={20} />
             </a>
           )}
           {project.liveUrl && (
-            <a href={project.liveUrl} className="transition-colors hover:text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(34,211,238,0.8)]">
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(34,211,238,0.8)]">
               <ExternalLink size={20} />
             </a>
           )}

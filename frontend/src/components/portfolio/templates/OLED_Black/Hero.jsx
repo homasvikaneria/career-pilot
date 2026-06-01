@@ -69,10 +69,10 @@ const Hero = ({ personal, stats, socials }) => (
       </motion.div>
 
       <motion.div variants={fadeUp} className="flex gap-6">
-        {socials.github && <SocialLink href={socials.github} icon={<Github />} />}
-        {socials.linkedin && <SocialLink href={socials.linkedin} icon={<Linkedin />} />}
-        {socials.twitter && <SocialLink href={socials.twitter} icon={<Twitter />} />}
-        {socials.email && <SocialLink href={`mailto:${socials.email}`} icon={<Mail />} />}
+        {socials.github && <SocialLink href={socials.github} icon={<Github />} ariaLabel="GitHub" />}
+        {socials.linkedin && <SocialLink href={socials.linkedin} icon={<Linkedin />} ariaLabel="LinkedIn" />}
+        {socials.twitter && <SocialLink href={socials.twitter} icon={<Twitter />} ariaLabel="Twitter" />}
+        {socials.email && <SocialLink href={`mailto:${socials.email}`} icon={<Mail />} ariaLabel="Email" />}
       </motion.div>
     </motion.div>
   </section>

@@ -7,12 +7,15 @@ const Testimonials = ({ testimonials }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
+    if (!testimonials || testimonials.length === 0) return undefined;
     const timer = setInterval(() => {
       setActiveIndex((previousIndex) => (previousIndex + 1) % testimonials.length);
     }, 6000);
 
     return () => clearInterval(timer);
-  }, [testimonials.length]);
+  }, [testimonials]);
+
+  if (!testimonials || testimonials.length === 0) return null;
 
   return (
     <section className="py-24">

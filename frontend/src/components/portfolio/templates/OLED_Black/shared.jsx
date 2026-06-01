@@ -34,11 +34,12 @@ export const SectionHeading = ({ title, icon: Icon }) => (
   </motion.div>
 );
 
-export const SocialLink = ({ href, icon }) => (
+export const SocialLink = ({ href, icon, ariaLabel }) => (
   <motion.a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
+    aria-label={ariaLabel}
     whileHover={{ y: -5, color: '#22d3ee', scale: 1.1 }}
     className="relative z-20 text-gray-500 transition-colors duration-300 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"
   >
