@@ -675,6 +675,18 @@ const [hoveredCard, setHoveredCard] = useState(null);
         <div className="rounded-2xl border border-fuchsia-500/20"
           style={{ height: 640, overflowY: "auto", overflowX: "hidden", transform: "translate(0)", position: "relative" }}>
           <PsychedelicSwirl />
+      {/* Psychedelic Swirl Theme */}
+      <div className="mt-12">
+        <div className="mb-4 flex items-center gap-3 px-1">
+          <span className="rounded-full bg-fuchsia-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-fuchsia-400 border border-fuchsia-500/30">
+            ✿ NEW — Psychedelic Swirl
+          </span>
+          <h2 className="text-lg font-semibold text-foreground/70">
+            Psychedelic Swirl — Retro / Nostalgic Full Template
+          </h2>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-border">
+          <MidnightGradient />
         </div>
       </div>
 
