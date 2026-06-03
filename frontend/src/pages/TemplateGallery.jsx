@@ -5,7 +5,6 @@ import { useTheme } from "../hooks/useTheme";
 import { motion, AnimatePresence } from "framer-motion";
 import { Moon, Sun, ChevronDown, Check, Eye, Star } from "lucide-react";
 
-
 import Navbar from '../components/Navbar'
 import { X } from "lucide-react";
 // import Hero from "../components/portfolio/templates/Holographic/Hero";
@@ -373,8 +372,6 @@ export default function TemplateGallery() {
         isOpen={!!previewTemplateId}
         onClose={() => setPreviewTemplateId(null)}
       />
-
-
     </div>
   );
 }
