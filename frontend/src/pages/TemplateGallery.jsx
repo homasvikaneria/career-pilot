@@ -5,7 +5,7 @@ import { useTheme } from "../hooks/useTheme";
 import { motion, AnimatePresence } from "framer-motion";
 import { Moon, Sun, ChevronDown, Check, Eye, Star } from "lucide-react";
 
-import WatercolorArtisticHero from "../components/portfolio/templates/Watercolor_Artistic/Hero";
+
 import Navbar from '../components/Navbar'
 import { X } from "lucide-react";
 // import Hero from "../components/portfolio/templates/Holographic/Hero";
@@ -374,17 +374,7 @@ export default function TemplateGallery() {
         onClose={() => setPreviewTemplateId(null)}
       />
 
-      <div className="mt-12">
-        <div className="mb-4 flex items-center gap-3 px-1">
-          <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-purple-400 border border-purple-500/30">
-            Preview
-          </span>
-          <h2 className="text-lg font-semibold text-foreground/70">Watercolor Artistic Theme — Hero Section</h2>
-        </div>
-        <div className="overflow-hidden rounded-2xl border border-purple-500/20">
-          <WatercolorArtisticHero />
-        </div>
-      </div>
+
     </div>
   );
 }
