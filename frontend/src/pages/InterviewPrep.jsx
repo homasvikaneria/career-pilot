@@ -2,7 +2,7 @@ import { triggerConfetti } from '../utils/confetti'
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Mic, MicOff, Video, VideoOff, XCircle, CheckCircle, AlertCircle, Volume2, VolumeX, RotateCcw, UserX, Loader2, Sparkles, ArrowRight, Target, TrendingUp, MessageSquare, Eye, Brain, Award, ChevronDown, ChevronUp, Clock, BarChart3, Lightbulb, Zap, Laptop, Smartphone, Chrome, AlertTriangle, FileUp, FileText, X, Code, Play, Terminal, Check } from 'lucide-react';
+import { Mic, MicOff, Video, VideoOff, XCircle, CheckCircle, AlertCircle, Volume2, VolumeX, RotateCcw, UserX, Loader2, Sparkles, ArrowRight, Target, TrendingUp, MessageSquare, Eye, Brain, Award, ChevronDown, ChevronUp, Clock, BarChart3, Lightbulb, Zap, Laptop, Smartphone, Chrome, AlertTriangle, FileUp, FileText, X, Code, Terminal, Check } from 'lucide-react';
 import Button from '../components/Button';
 import CodeEditor from '../components/CodeEditor';
 import BodyLanguageTips from '../components/BodyLanguageTips';
@@ -325,13 +325,12 @@ export default function InterviewPrep() {
       cpp: MOCK_CHALLENGE.templates.cpp
     }
   });
-  const [isRunning, setIsRunning] = useState(false);
-  const [runOutput, setRunOutput] = useState(null);
   const [submitOutput, setSubmitOutput] = useState(null);
   const [activeDetailTab, setActiveDetailTab] = useState('description'); // 'description' | 'notes'
   const [evaluationResult, setEvaluationResult] = useState(null);
   const [evaluationLoading, setEvaluationLoading] = useState(false);
   const [evaluationError, setEvaluationError] = useState(null);
+  const selectedLanguageRef = useRef(selectedLanguage);
 
   const handleCodeChange = (newCode) => {
     setUserCodes(prev => ({
@@ -353,29 +352,7 @@ export default function InterviewPrep() {
     }));
   };
 
-  const handleRunCode = () => {
-    setIsRunning(true);
-    setRunOutput('Running code against test cases...\n');
-    setSubmitOutput(null);
 
-    setTimeout(() => {
-      setIsRunning(false);
-      setRunOutput(
-        `[STATUS] Completed\n\n` +
-        `Test Case 1:\n` +
-        `  Input: nums = [2,7,11,15], target = 9\n` +
-        `  Expected: [0,1]\n` +
-        `  Actual: [0,1]\n` +
-        `  Result: Success ✓\n\n` +
-        `Test Case 2:\n` +
-        `  Input: nums = [3,2,4], target = 6\n` +
-        `  Expected: [1,2]\n` +
-        `  Actual: [1,2]\n` +
-        `  Result: Success ✓\n\n` +
-        `All test cases passed successfully!`
-      );
-    }, 1500);
-  };
 
   const handleSubmitCode = async () => {
     const trimmedCode = (currentCode || '').trim();
@@ -386,11 +363,11 @@ export default function InterviewPrep() {
       return;
     }
 
+    const submittedLanguage = selectedLanguage;
     setEvaluationLoading(true);
     setEvaluationError(null);
     setEvaluationResult(null);
     setSubmitOutput('Submitting solution to AI evaluation server...\n');
-    setRunOutput(null);
 
     try {
       const response = await interviewApi.evaluateCoding({
@@ -398,9 +375,13 @@ export default function InterviewPrep() {
           title: MOCK_CHALLENGE.title,
           description: MOCK_CHALLENGE.description
         },
-        language: selectedLanguage,
+        language: submittedLanguage,
         code: trimmedCode
       });
+
+      if (selectedLanguageRef.current !== submittedLanguage) {
+        return;
+      }
 
       if (response && response.success && response.data) {
         setEvaluationResult(response.data);
@@ -410,13 +391,18 @@ export default function InterviewPrep() {
         throw new Error('Invalid response structure received from server');
       }
     } catch (err) {
+      if (selectedLanguageRef.current !== submittedLanguage) {
+        return;
+      }
       console.error('Coding submission error:', err);
       const errMsg = err.message || 'An error occurred during submission evaluation';
       setEvaluationError(errMsg);
       setSubmitOutput(`[ERROR] AI Evaluation Failed\nReason: ${errMsg}\n`);
       toast.error(errMsg);
     } finally {
-      setEvaluationLoading(false);
+      if (selectedLanguageRef.current === submittedLanguage) {
+        setEvaluationLoading(false);
+      }
     }
   };
 
@@ -492,10 +478,11 @@ export default function InterviewPrep() {
 
   // Reset outputs and evaluation results when language changes
   useEffect(() => {
-    setRunOutput(null);
+    selectedLanguageRef.current = selectedLanguage;
     setSubmitOutput(null);
     setEvaluationResult(null);
     setEvaluationError(null);
+    setEvaluationLoading(false);
   }, [selectedLanguage]);
 
   useEffect(() => {
@@ -1411,6 +1398,7 @@ export default function InterviewPrep() {
                           type="button"
                           onClick={removeResume}
                           className="p-1.5 rounded-lg hover:bg-muted transition-colors ml-3"
+                          aria-label="Remove resume"
                         >
                           <X className="w-4 h-4 text-muted-foreground" />
                         </button>
@@ -1577,7 +1565,7 @@ export default function InterviewPrep() {
                       language={selectedLanguage}
                       code={currentCode}
                       onChange={handleCodeChange}
-                      readOnly={isRunning || evaluationLoading}
+                      readOnly={evaluationLoading}
                     />
                   </div>
 
@@ -1587,23 +1575,14 @@ export default function InterviewPrep() {
                       <Terminal className="w-3.5 h-3.5" /> Results Panel
                     </h3>
                     <div className="bg-slate-950 text-slate-100 p-4 rounded-xl border border-border font-mono text-xs h-[130px] overflow-y-auto leading-relaxed shadow-inner">
-                      {isRunning && (
-                        <div className="flex items-center gap-2 text-indigo-400">
-                          <Loader2 className="w-4 h-4 animate-spin" />
-                          <span>Executing code in test sandbox...</span>
-                        </div>
-                      )}
                       {evaluationLoading && (
                         <div className="flex items-center gap-2 text-indigo-400">
                           <Loader2 className="w-4 h-4 animate-spin" />
                           <span>Evaluating solution correctness...</span>
                         </div>
                       )}
-                      {!isRunning && !evaluationLoading && !runOutput && !submitOutput && (
-                        <span className="text-muted-foreground">Click "Run Code" or "Submit Solution" to view results.</span>
-                      )}
-                      {!isRunning && runOutput && (
-                        <pre className="whitespace-pre-wrap text-emerald-400">{runOutput}</pre>
+                      {!evaluationLoading && !submitOutput && (
+                        <span className="text-muted-foreground">Click "Submit Solution" to view results.</span>
                       )}
                       {!evaluationLoading && submitOutput && (
                         <pre className="whitespace-pre-wrap text-emerald-400">{submitOutput}</pre>
@@ -1710,18 +1689,9 @@ export default function InterviewPrep() {
                   {/* Submit Toolbar */}
                   <div className="flex justify-end gap-3 pt-2">
                     <Button
-                      variant="outline"
-                      onClick={handleRunCode}
-                      disabled={isRunning || evaluationLoading}
-                      loading={isRunning}
-                    >
-                      {!isRunning && <Play className="w-4 h-4 mr-2" />}
-                      Run Code
-                    </Button>
-                    <Button
                       variant="primary"
                       onClick={handleSubmitCode}
-                      disabled={isRunning || evaluationLoading}
+                      disabled={evaluationLoading}
                       loading={evaluationLoading}
                     >
                       {!evaluationLoading && <Check className="w-4 h-4 mr-2" />}
