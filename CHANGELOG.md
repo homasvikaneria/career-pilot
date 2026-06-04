@@ -1,3 +1,10 @@
+## [1.145.1](https://github.com/anurag3407/career-pilot/compare/v1.145.0...v1.145.1) (2026-06-04)
+
+
+### Bug Fixes
+
+* **email:** validate email service configuration on startup ([17a15c1](https://github.com/anurag3407/career-pilot/commit/17a15c162dd2f8cc58c84c39e61942464fbf9277)), closes [#2883](https://github.com/anurag3407/career-pilot/issues/2883)
+
 # [1.145.0](https://github.com/anurag3407/career-pilot/compare/v1.144.0...v1.145.0) (2026-06-04)
 
 
