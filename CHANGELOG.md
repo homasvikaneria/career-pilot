@@ -1,3 +1,16 @@
+# [1.185.0](https://github.com/anurag3407/career-pilot/compare/v1.184.0...v1.185.0) (2026-06-07)
+
+
+### Bug Fixes
+
+* correct case-sensitive import paths in Zoom_Into_Work template (./shared -> ./Shared) ([2eccf47](https://github.com/anurag3407/career-pilot/commit/2eccf47526883830cdf26b516fe1b0bd2daf3727))
+* correct import path in Doctor_Medical template (./Projects -> ./projects) ([a3ce676](https://github.com/anurag3407/career-pilot/commit/a3ce67622a4cbd088239afb09c78e0005c97c7b9))
+
+
+### Features
+
+* add Audio_First_Sonar_Navigation portfolio template ([93ce191](https://github.com/anurag3407/career-pilot/commit/93ce191520215e9cc24bd57f423f88b4461394ee)), closes [#3257](https://github.com/anurag3407/career-pilot/issues/3257)
+
 # [1.184.0](https://github.com/anurag3407/career-pilot/compare/v1.183.0...v1.184.0) (2026-06-07)
 
 
