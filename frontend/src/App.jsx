@@ -3,6 +3,8 @@
  * Main Application Component with Route-based Code Splitting
  * Implements lazy loading for improved performance
  */
+
+import VercelDeploy from "./components/portfolio/templates/Vercel_Deploy/index";
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import StockTicker from "./components/portfolio/templates/Finance_Corporate/StockTicker";
 import Deployments from './pages/Deployments'
@@ -27,9 +29,8 @@ const ResumeBuilder = lazy(() => import('./pages/ResumeBuilder'));
 import TextToResume from './pages/TextToResume';
 import About from './components/portfolio/templates/Tech_Startup/About';
 import ChatbotPortfolio from "./components/portfolio/templates/Chatbot_Portfolio";
-import GamifiedXP from "./components/portfolio/templates/Gamified_XP";
-import TelescopeZoom from "./components/portfolio/templates/Telescope_Zoom";
-import DayNightCycle from './components/portfolio/templates/Day_Night_Cycle/index.jsx';
+import GlassmorphismTemplate from "./components/portfolio/templates/Glassmorphism/index";
+
 import JobTracker from './pages/JobTracker';
 
 const Community = lazy(() => import('./pages/Community'));
@@ -85,6 +86,7 @@ import RouteErrorBoundary from './components/RouteErrorBoundary';
 
 // Hub Imports
 const GitHubDashboard = lazy(() => import('./pages/GitHubDashboard'));
+const LinkedInDashboard = lazy(() => import('./pages/LinkedInDashboard'));
 const RepoAnalyzerLanding = lazy(() => import('./pages/RepoAnalyzer/Landing'));
 const RepoAnalyzerDashboard = lazy(() => import('./pages/RepoAnalyzer/Dashboard'));
 const RepoAnalyzerWorkspace = lazy(() => import('./pages/RepoAnalyzer/Workspace'));
@@ -271,6 +273,8 @@ function AppRoutes() {
         <Route path="/templates/high-fashion" element={<HighFashion />} />
         <Route path="/templates/typographic-wheatpaste-poster-wall" element={<TypographicWheatpastePosterWall />} />
 
+        <Route path="/templates/chatbot" element={<ChatbotPortfolio />} /> 
+        <Route path="/templates/glassmorphism" element={<GlassmorphismTemplate/>} />
         {/* Core Protected Routes */}
         <Route 
   path="/dashboard" 
@@ -391,36 +395,30 @@ function AppRoutes() {
           }
         />
 
-        <Route 
-  path="/repo-analyzer" 
-  element={
-    <ProtectedRoute>
-      <Suspense fallback={<LoadingScreen label="Loading Analyzer..." />}>
-        <RepoAnalyzerLanding />
-      </Suspense>
-    </ProtectedRoute>
-  } 
-/>
-        <Route 
-  path="/repo-analyzer/dashboard" 
-  element={
-    <ProtectedRoute>
-      <Suspense fallback={<LoadingScreen label="Loading Analyzer Dashboard..." />}>
-        <RepoAnalyzerDashboard />
-      </Suspense>
-    </ProtectedRoute>
-  } 
-/>
-        <Route 
-  path="/repo-analyzer/workspace" 
-  element={
-    <ProtectedRoute>
-      <Suspense fallback={<LoadingScreen label="Loading Analyzer Workspace..." />}>
-        <RepoAnalyzerWorkspace />
-      </Suspense>
-    </ProtectedRoute>
-  } 
-/>
+        <Route
+          path="/linkedin-dashboard"
+          element={
+            <ProtectedRoute>
+              <Suspense fallback={<LoadingScreen label="Loading LinkedIn Dashboard..." />}>
+                <LinkedInDashboard />
+              </Suspense>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/linkedin"
+          element={
+            <ProtectedRoute>
+              <Suspense fallback={<div className="flex justify-center items-center h-screen">Loading LinkedIn Dashboard...</div>}>
+                <LinkedInDashboard />
+              </Suspense>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route path="/repo-analyzer" element={<Navigate to="/project-visualizer" replace />} />
+        <Route path="/repo-analyzer/dashboard" element={<Navigate to="/project-visualizer" replace />} />
+        <Route path="/repo-analyzer/workspace" element={<Navigate to="/project-visualizer" replace />} />
         <Route 
   path="/project-visualizer" 
   element={

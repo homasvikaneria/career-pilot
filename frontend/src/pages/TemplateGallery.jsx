@@ -7,6 +7,7 @@ import HolographicAbout from "../components/portfolio/templates/Holographic/Abou
 import CulinaryAbout from "../components/portfolio/templates/Culinary_Restaurant/About";
 import TechStartupHero from "../components/portfolio/templates/Tech_Startup/Hero";
 import GeometricShapesAbout from "../components/portfolio/templates/Geometric_Shapes/About";
+import ChooseAdventurePortfolio from '../components/portfolio/templates/Choose_Adventure/index';
 import WeatherMood from "../components/portfolio/templates/Weather_Mood/index";
 import SwissTypography from "../components/portfolio/templates/Swiss_Typography/index";
 import DesertDunes from "../components/portfolio/templates/Desert_Dunes/index";
@@ -15,8 +16,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Moon, Sun, ChevronDown, Check, Eye, Star, Sparkles, X } from "lucide-react";
 import LiquidGlass from "../components/portfolio/templates/Liquid_Glass/index";
 import MidnightGradient from "../components/portfolio/templates/Midnight_Gradient/index";
+import CherryBlossom from '../components/portfolio/templates/Cherry_Blossom/index';
 import PlayingCardsPortfolio from "../components/portfolio/templates/Playing_Cards";
 import PsychedelicSwirl from "../components/portfolio/templates/Psychedelic_Swirl/index";
+import MemphisPop from '../components/portfolio/templates/Memphis_Pop/index';
 import TypewriterEffect from "../components/portfolio/templates/Typewriter_Effect/index";
 import ChromaticGlitch from "../components/portfolio/templates/Chromatic_Glitch/index";
 import MagneticDock from "../components/portfolio/templates/Magnetic_Dock/index";
@@ -37,7 +40,9 @@ function TemplatePreviewFrame({ label, badgeColor, children }) {
   return (
     <div className="mt-12">
       <div className="mb-4 flex items-center gap-3 px-1">
-        <span className={`rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest border ${badgeColor}`}>
+        <span
+          className={`rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest border ${badgeColor}`}
+        >
           Preview
         </span>
         <h2 className="text-lg font-semibold text-foreground/70">{label}</h2>
@@ -49,10 +54,10 @@ function TemplatePreviewFrame({ label, badgeColor, children }) {
         className="rounded-2xl border border-border"
         style={{
           height: 600,
-          overflowY: "auto",
-          overflowX: "hidden",
-          transform: "translate(0)",
-          position: "relative",
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          transform: 'translate(0)',
+          position: 'relative',
         }}
       >
         {children}
@@ -60,6 +65,11 @@ function TemplatePreviewFrame({ label, badgeColor, children }) {
     </div>
   );
 }
+// import Hero from "../components/portfolio/templates/Holographic/Hero";
+// import ChooseAdventurePortfolio from "../components/portfolio/templates/Choose_Adventure/index";
+// import RetroProjects from "../components/portfolio/templates/2D_Retro_8bit/Projects";
+// import FantasyRPGProjects from "../components/portfolio/templates/Fantasy_RPG/Projects";
+
 
 function FilterSelect({ value, onChange, options, className = "" }) {
   const [open, setOpen] = useState(false);
@@ -70,8 +80,8 @@ function FilterSelect({ value, onChange, options, className = "" }) {
     function handleClickOutside(e) {
       if (ref.current && !ref.current.contains(e.target)) setOpen(false);
     }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   return (
@@ -84,15 +94,16 @@ function FilterSelect({ value, onChange, options, className = "" }) {
           rounded-xl border text-sm font-medium text-foreground
           bg-card backdrop-blur-sm
           transition-all duration-300 cursor-pointer select-none
-          ${open
-            ? "border-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.45)] ring-1 ring-cyan-400/30"
-            : "border-border hover:border-cyan-500/60 hover:shadow-[0_0_8px_rgba(34,211,238,0.25)]"
+          ${
+            open
+              ? 'border-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.45)] ring-1 ring-cyan-400/30'
+              : 'border-border hover:border-cyan-500/60 hover:shadow-[0_0_8px_rgba(34,211,238,0.25)]'
           }
         `}
       >
         <span>{selectedLabel}</span>
         <ChevronDown
-          className={`w-4 h-4 text-cyan-400 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-cyan-400 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
         />
       </button>
 
@@ -102,7 +113,7 @@ function FilterSelect({ value, onChange, options, className = "" }) {
             initial={{ opacity: 0, y: -6, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.97 }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
+            transition={{ duration: 0.18, ease: 'easeOut' }}
             className="
               absolute z-50 left-0 top-[calc(100%+6px)] min-w-full
               bg-card border border-border
@@ -115,19 +126,25 @@ function FilterSelect({ value, onChange, options, className = "" }) {
               return (
                 <li
                   key={opt.value}
-                  onClick={() => { onChange(opt.value); setOpen(false); }}
+                  onClick={() => {
+                    onChange(opt.value);
+                    setOpen(false);
+                  }}
                   className={`
                     flex items-center justify-between gap-3
                     px-4 py-2.5 text-sm cursor-pointer select-none
                     transition-all duration-200
-                    ${isSelected
-                      ? "bg-cyan-500/20 text-cyan-300 font-semibold"
-                      : "text-foreground hover:bg-cyan-500 hover:text-white"
+                    ${
+                      isSelected
+                        ? 'bg-cyan-500/20 text-cyan-300 font-semibold'
+                        : 'text-foreground hover:bg-cyan-500 hover:text-white'
                     }
                   `}
                 >
                   <span>{opt.label}</span>
-                  {isSelected && <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" />}
+                  {isSelected && (
+                    <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  )}
                 </li>
               );
             })}
@@ -141,7 +158,9 @@ function FilterSelect({ value, onChange, options, className = "" }) {
 const TemplateHeroPreview = ({ templateId, portfolioData }) => {
   const Component = useMemo(() => {
     if (!templateId) return null;
-    return React.lazy(() => import(`../components/portfolio/templates/${templateId}/index.jsx`));
+    return React.lazy(
+      () => import(`../components/portfolio/templates/${templateId}/index.jsx`)
+    );
   }, [templateId]);
 
   if (!templateId) return null;
@@ -157,30 +176,41 @@ function TemplateCard({ template, hovered, onHover, onLeave, onUse, aiDraft }) {
     <motion.div
       onMouseEnter={() => onHover(template.id)}
       onMouseLeave={onLeave}
-      animate={hovered ? "hover" : "rest"}
+      animate={hovered ? 'hover' : 'rest'}
       initial="rest"
       variants={{
         rest: {
           y: 0,
           scale: 1,
-          boxShadow: "0 4px 20px rgba(0,0,0,0.25)",
-          borderColor: "rgba(255,255,255,0.08)",
+          boxShadow: '0 4px 20px rgba(0,0,0,0.25)',
+          borderColor: 'rgba(255,255,255,0.08)',
           transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
         },
         hover: {
           y: -10,
           scale: 1.02,
-          boxShadow: "0 28px 52px rgba(0,0,0,0.50), 0 0 0 1px rgba(99,102,241,0.55)",
-          borderColor: "rgba(99,102,241,0.65)",
-          transition: { type: "spring", stiffness: 280, damping: 22 },
+          boxShadow:
+            '0 28px 52px rgba(0,0,0,0.50), 0 0 0 1px rgba(99,102,241,0.55)',
+          borderColor: 'rgba(99,102,241,0.65)',
+          transition: { type: 'spring', stiffness: 280, damping: 22 },
         },
       }}
       className="bg-card rounded-2xl overflow-hidden border border-border flex flex-col justify-between cursor-pointer"
     >
       <div className="overflow-hidden relative bg-background h-52">
         {template.isComplete ? (
-          <div className="absolute top-0 left-0 origin-top-left pointer-events-none" style={{ width: '1280px', height: '800px', transform: 'scale(0.3)' }}>
-            <TemplateHeroPreview templateId={template.id} portfolioData={aiDraft} />
+          <div
+            className="absolute top-0 left-0 origin-top-left pointer-events-none"
+            style={{
+              width: '1280px',
+              height: '800px',
+              transform: 'scale(0.3)',
+            }}
+          >
+            <TemplateHeroPreview
+              templateId={template.id}
+              portfolioData={aiDraft}
+            />
           </div>
         ) : (
           <motion.img
@@ -188,8 +218,14 @@ function TemplateCard({ template, hovered, onHover, onLeave, onUse, aiDraft }) {
             alt={template.title}
             className="w-full h-52 object-cover object-top"
             variants={{
-              rest: { scale: 1, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } },
-              hover: { scale: 1.08, transition: { type: "spring", stiffness: 200, damping: 25 } },
+              rest: {
+                scale: 1,
+                transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+              },
+              hover: {
+                scale: 1.08,
+                transition: { type: 'spring', stiffness: 200, damping: 25 },
+              },
             }}
           />
         )}
@@ -201,14 +237,23 @@ function TemplateCard({ template, hovered, onHover, onLeave, onUse, aiDraft }) {
       </div>
 
       <div className="p-5 flex-1">
-        <h2 className="text-2xl font-semibold text-foreground">{template.title}</h2>
-        <p className="text-muted-foreground mt-1 text-sm">By {template.author}</p>
+        <h2 className="text-2xl font-semibold text-foreground">
+          {template.title}
+        </h2>
+        <p className="text-muted-foreground mt-1 text-sm">
+          By {template.author}
+        </p>
         <div className="flex flex-wrap gap-2 mt-3">
-          {[template.category, template.colorScheme, template.layout].map((tag) => (
-            <span key={tag} className="text-xs bg-muted text-muted-foreground px-2.5 py-1 rounded-full">
-              {tag}
-            </span>
-          ))}
+          {[template.category, template.colorScheme, template.layout].map(
+            (tag) => (
+              <span
+                key={tag}
+                className="text-xs bg-muted text-muted-foreground px-2.5 py-1 rounded-full"
+              >
+                {tag}
+              </span>
+            )
+          )}
         </div>
       </div>
 
@@ -223,18 +268,50 @@ function TemplateCard({ template, hovered, onHover, onLeave, onUse, aiDraft }) {
             {template.views.toLocaleString()}
           </span>
         </div>
-        <button
-          onClick={() => onUse(template.title, false, template.id)}
-          className="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-colors duration-200"
-        >
-          Use Template
-        </button>
-        <button
-          onClick={() => onUse(template.id, true)}
-          className="w-full mt-2 py-2.5 rounded-xl border border-border hover:border-cyan-500/60 text-foreground text-sm font-medium transition-colors duration-200"
-        >
-          Preview
-        </button>
+
+        <AnimatePresence>
+          {hovered && (
+            <motion.div
+              key="cta-group"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 340,
+                  damping: 26,
+                  delay: 0.05,
+                },
+              }}
+              exit={{
+                opacity: 0,
+                y: 10,
+                transition: { duration: 0.16, ease: 'easeIn' },
+              }}
+              className="flex gap-2 w-full mt-4"
+            >
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onUse(template.title, false, template.id);
+                }}
+                className="flex-1 bg-primary text-primary-foreground py-2.5 rounded-xl font-semibold text-sm cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform"
+              >
+                Use Theme
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onUse(template.id, true, template.id);
+                }}
+                className="flex-1 bg-muted text-foreground border border-border py-2.5 rounded-xl font-semibold text-sm cursor-pointer hover:bg-accent hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+              >
+                <Eye className="w-4 h-4" /> Preview
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.div>
   );
@@ -327,42 +404,44 @@ export default function TemplateGallery() {
   };
 
   const CATEGORY_OPTIONS = [
-    { value: "All", label: "All Categories" },
-    { value: "Portfolio", label: "Portfolio" },
-    { value: "Resume", label: "Resume" },
-    { value: "Dashboard", label: "Dashboard" },
+    { value: 'All', label: 'All Categories' },
+    { value: 'Portfolio', label: 'Portfolio' },
+    { value: 'Resume', label: 'Resume' },
+    { value: 'Dashboard', label: 'Dashboard' },
   ];
   const COLOR_OPTIONS = [
-    { value: "All", label: "All Color Schemes" },
-    { value: "Dark", label: "Dark" },
-    { value: "Light", label: "Light" },
-    { value: "Colorful", label: "Colorful" },
+    { value: 'All', label: 'All Color Schemes' },
+    { value: 'Dark', label: 'Dark' },
+    { value: 'Light', label: 'Light' },
+    { value: 'Colorful', label: 'Colorful' },
   ];
   const LAYOUT_OPTIONS = [
-    { value: "All", label: "All Layouts" },
-    { value: "Grid", label: "Grid" },
-    { value: "Minimal", label: "Minimal" },
-    { value: "Cards", label: "Cards" },
-    { value: "Interactive", label: "Interactive" },
+    { value: 'All', label: 'All Layouts' },
+    { value: 'Grid', label: 'Grid' },
+    { value: 'Minimal', label: 'Minimal' },
+    { value: 'Cards', label: 'Cards' },
+    { value: 'Interactive', label: 'Interactive' },
   ];
   const SORT_OPTIONS = [
-    { value: "Popular", label: "Popular" },
-    { value: "Newest", label: "Newest" },
-    { value: "Highest Rated", label: "Highest Rated" },
+    { value: 'Popular', label: 'Popular' },
+    { value: 'Newest', label: 'Newest' },
+    { value: 'Highest Rated', label: 'Highest Rated' },
   ];
 
   const filteredTemplates = templates.filter((template) => {
     if (!template.isComplete) return false;
-    const matchesCategory = category === "All" || template.category === category;
-    const matchesColorScheme = colorScheme === "All" || template.colorScheme === colorScheme;
-    const matchesLayout = layout === "All" || template.layout === layout;
+    const matchesCategory =
+      category === 'All' || template.category === category;
+    const matchesColorScheme =
+      colorScheme === 'All' || template.colorScheme === colorScheme;
+    const matchesLayout = layout === 'All' || template.layout === layout;
     return matchesCategory && matchesColorScheme && matchesLayout;
   });
 
   const sortedTemplates = [...filteredTemplates].sort((a, b) => {
-    if (sort === "Popular") return b.views - a.views;
-    if (sort === "Highest Rated") return b.rating - a.rating;
-    if (sort === "Newest") return new Date(b.createdAt) - new Date(a.createdAt);
+    if (sort === 'Popular') return b.views - a.views;
+    if (sort === 'Highest Rated') return b.rating - a.rating;
+    if (sort === 'Newest') return new Date(b.createdAt) - new Date(a.createdAt);
     return 0;
   });
 
@@ -392,10 +471,11 @@ export default function TemplateGallery() {
                 <Sparkles className="w-5 h-5" /> ✨ Resume Parsed Successfully!
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
-                Your data has been extracted. Select a template below and we'll automatically inject your experience and projects!
+                Your data has been extracted. Select a template below and we'll
+                automatically inject your experience and projects!
               </p>
             </div>
-            <button 
+            <button
               onClick={clearDraft}
               className="p-2 hover:bg-emerald-500/20 text-emerald-400 rounded-lg transition-colors"
               title="Discard Draft"
@@ -420,7 +500,11 @@ export default function TemplateGallery() {
                 exit={{ y: -20, opacity: 0, rotate: -45 }}
                 transition={{ duration: 0.2 }}
               >
-                {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                {theme === 'light' ? (
+                  <Moon className="w-5 h-5" />
+                ) : (
+                  <Sun className="w-5 h-5" />
+                )}
               </motion.div>
             </AnimatePresence>
           </button>
@@ -429,23 +513,46 @@ export default function TemplateGallery() {
         <div className="mb-8 rounded-2xl border border-border bg-card p-5">
           <div className="mb-4 flex items-center justify-between gap-4">
             <div>
-              <h2 className="text-xl font-semibold text-foreground">Portfolio theme</h2>
+              <h2 className="text-xl font-semibold text-foreground">
+                Portfolio theme
+              </h2>
               <p className="text-sm text-muted-foreground">
-                Pick a theme before deploying. Premium themes are shown and locked in the live gallery flow.
+                Pick a theme before deploying. Premium themes are shown and
+                locked in the live gallery flow.
               </p>
             </div>
             <span className="rounded-full border border-border bg-muted px-3 py-1 text-xs text-muted-foreground">
               Selected: {selectedTheme}
             </span>
           </div>
-          <ThemeSelector selectedTheme={selectedTheme} onSelectTheme={setSelectedTheme} />
+          <ThemeSelector
+            selectedTheme={selectedTheme}
+            onSelectTheme={setSelectedTheme}
+          />
         </div>
 
         <div className="flex flex-wrap items-center gap-3 mb-8">
-          <FilterSelect value={category} onChange={setCategory} options={CATEGORY_OPTIONS} />
-          <FilterSelect value={colorScheme} onChange={setColorScheme} options={COLOR_OPTIONS} />
-          <FilterSelect value={layout} onChange={setLayout} options={LAYOUT_OPTIONS} />
-          <FilterSelect value={sort} onChange={setSort} options={SORT_OPTIONS} className="ml-auto" />
+          <FilterSelect
+            value={category}
+            onChange={setCategory}
+            options={CATEGORY_OPTIONS}
+          />
+          <FilterSelect
+            value={colorScheme}
+            onChange={setColorScheme}
+            options={COLOR_OPTIONS}
+          />
+          <FilterSelect
+            value={layout}
+            onChange={setLayout}
+            options={LAYOUT_OPTIONS}
+          />
+          <FilterSelect
+            value={sort}
+            onChange={setSort}
+            options={SORT_OPTIONS}
+            className="ml-auto"
+          />
         </div>
 
         {sortedTemplates.length === 0 ? (
@@ -694,3 +801,5 @@ export default function TemplateGallery() {
     </div>
   );
 }
+      
+       
