@@ -1,3 +1,10 @@
+# [1.197.0](https://github.com/anurag3407/career-pilot/compare/v1.196.0...v1.197.0) (2026-06-08)
+
+
+### Features
+
+* implement smart prefetching for job listings ([8e24e8b](https://github.com/anurag3407/career-pilot/commit/8e24e8bd6fd8b21b1b7b4f36b18d7e9c8f981888))
+
 # [1.196.0](https://github.com/anurag3407/career-pilot/compare/v1.195.0...v1.196.0) (2026-06-08)
 
 
