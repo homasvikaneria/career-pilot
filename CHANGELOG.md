@@ -1,3 +1,10 @@
+# [1.196.0](https://github.com/anurag3407/career-pilot/compare/v1.195.0...v1.196.0) (2026-06-08)
+
+
+### Features
+
+* add classic pokedex template and cleanup unneeded files ([4d99d31](https://github.com/anurag3407/career-pilot/commit/4d99d316a67d174792c803cb9d47e69eba9e7bf9))
+
 # [1.1.0](https://github.com/krishsoni-hub/career-pilot-krishhub/compare/v1.0.0...v1.1.0) (2026-06-08)
 
 
