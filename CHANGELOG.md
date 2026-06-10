@@ -1,7 +1,7 @@
 # [1.1.0](https://github.com/Gurkaran18/career-pilot/compare/v1.0.2...v1.1.0) (2026-06-10)
 
 
-### Bug Fixes
+## Bug Fixes
 
 * add missing LineChart import in AppSidebar.jsx ([c623a8e](https://github.com/Gurkaran18/career-pilot/commit/c623a8e668271372df9b50924d069dda481642c8))
 * added missing imports in TemplateGallery and Desert Dunes template ([ba4d7e6](https://github.com/Gurkaran18/career-pilot/commit/ba4d7e65d2c0c2def915f3bfe2c636b26084a226))
