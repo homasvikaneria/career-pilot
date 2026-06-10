@@ -191,6 +191,19 @@ export const templates = [
     "createdAt": "2026-05-01"
   },
   {
+    "id": "Transparent_Desktop_Overlay_OS",
+    "title": "Transparent Desktop Overlay OS",
+    "category": "Portfolio",
+    "colorScheme": "Dark",
+    "layout": "Interactive",
+    "author": "System",
+    "views": 1500,
+    "rating": 5.0,
+    "image": "/templates/Transparent_Desktop_Overlay_OS.png",
+    "createdAt": "2026-06-09",
+    "isComplete": true
+  },
+  {
     "id": "Advent_Calendar",
     "title": "Advent Calendar",
     "category": "Portfolio",

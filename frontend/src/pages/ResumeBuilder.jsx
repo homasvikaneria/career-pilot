@@ -140,50 +140,29 @@ export default function ResumeBuilder() {
   setClaritySuggestions(suggestions)
 }, [personal, experience, projects])
 
- // ─────────────────── ATS Keyword Assessment Loop ───────────────────
+  // ─────────────────── ATS Keyword Assessment Loop ───────────────────
   useEffect(() => {
     const keywords = [
-      "React", "JavaScript", "Git", "Node.js",
-      "API", "Leadership", "Teamwork", "Problem Solving"
+      "React",
+      "JavaScript",
+      "Git",
+      "Node.js",
+      "API",
+      "Leadership",
+      "Teamwork",
+      "Problem Solving"
     ]
 
-// Combined Priority Skills and Recommendation Logic
-  const prioritySkills = [
-    "React",
-    "JavaScript",
-    "Node.js",
-    "API",
-    "Git",
-    "Leadership",
-    "Problem Solving",
-    "Teamwork"
-  ]
+    const resumeText = `
+      ${personal?.summary || ''}
+      ${skills || ''}
+      ${(projects || []).map(p => p.description || '').join(" ")}
+      ${(experience || []).map(e => e.description || '').join(" ")}
+    `.toLowerCase()
 
-  const resumeText = `
-    ${personal.summary}
-    ${skills}
-    ${projects.map(p => p.description).join(" ")}
-    ${experience.map(e => e.description).join(" ")}
-  `.toLowerCase()
-
-  const foundKeywords = keywords.filter(keyword =>
-    resumeText.includes(keyword.toLowerCase())
-  )
-
-  const missing = keywords.filter(
-    keyword => !foundKeywords.includes(keyword)
-  )
-
-  setMissingKeywords(missing)
-
-  const suggestions = prioritySkills.filter(
-    skill => missing.includes(skill)
-  )
-
-  // Fallback to missing keywords if no priority skills match
-  setRecommendedSkills(
-    suggestions.length > 0 ? suggestions.slice(0, 4) : missing.slice(0, 4)
-  )
+    const foundKeywords = keywords.filter(keyword =>
+      resumeText.includes(keyword.toLowerCase())
+    )
 
   setAtsScore(
     Math.round(
@@ -252,6 +231,25 @@ useEffect(() => {
       ...redundancyValidationErrors
     ];
   }, [experience, education, projects]);
+
+  const saveVersion = React.useCallback(() => {
+    const newVersion = {
+      id: Date.now(),
+      timestamp: new Date().toLocaleString(),
+      content: typeof generateMarkdown === 'function' ? generateMarkdown() : "",
+    };
+    setResumeVersions(prev => [newVersion, ...prev]);
+    if (typeof toast !== 'undefined') {
+      toast.success("Resume version layout tracked successfully!");
+    }
+  }, [experience, education, projects, personal, skills, generateMarkdown]);
+
+  const restoreVersion = React.useCallback((version) => {
+    setSelectedVersion(version);
+    if (typeof toast !== 'undefined') {
+      toast.success(`Restored version from ${version.timestamp}`);
+    }
+  }, []);
 
   // ─────────────────── Automated Recommendations Engine ───────────────────
   useEffect(() => {
@@ -471,6 +469,7 @@ useEffect(() => {
     try {
       setIsSubmitting(true)
       const markdown = generateMarkdown()
+
       const response = await resumeApi.create({
         originalText: markdown,
         jobRole: targetRole || 'Software Engineer',
