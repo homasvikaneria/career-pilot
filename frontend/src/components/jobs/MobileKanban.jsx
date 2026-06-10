@@ -436,7 +436,7 @@ export default function MobileKanban({
   }, [isControlled, currentUserId]);
 
   useEffect(() => {
-    if (initialJobs) {
+    if (initialJobs !== undefined) {
       setTrackedJobs(initialJobs);
       setStats(calculateJobStats(initialJobs));
       setLoading(false);
