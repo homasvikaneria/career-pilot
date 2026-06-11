@@ -1,27 +1,14 @@
 export const templates = [
 {
-  "id": "Captcha_Solver_Portfolio_Gate",
-  "title": "Captcha Solver Portfolio Gate",
+  "id": "Fake_WebOS_Operating_System",
+  "title": "Fake WebOS Operating System",
   "category": "Portfolio",
   "colorScheme": "Dark",
   "layout": "Interactive",
   "author": "System",
   "views": 0,
-  "rating": 0,
-  "image": "/template-previews/Captcha_Solver_Portfolio_Gate.png",
-  "createdAt": "2026-06-09",
-  "isComplete": true
-},
-{
-  "id": "Infinite_Zoom_Mandelbrot_Set",
-  "title": "Infinite Zoom Mandelbrot Set",
-  "category": "Portfolio",
-  "colorScheme": "Dark",
-  "layout": "Interactive",
-  "author": "System",
-  "views": 0,
-  "rating": 0,
-  "image": "/template-previews/Infinite_Zoom_Mandelbrot_Set.png",
+  "rating": 4.9,
+  "image": "/templates/Fake_WebOS_Operating_System.png",
   "createdAt": "2026-06-09",
   "isComplete": true
 },
