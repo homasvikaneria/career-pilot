@@ -1,3 +1,23 @@
+# [1.1.0](https://github.com/homasvikaneria/career-pilot/compare/v1.0.0...v1.1.0) (2026-06-13)
+
+
+### Bug Fixes
+
+* address codeant-ai review comments ([02c9270](https://github.com/homasvikaneria/career-pilot/commit/02c92705c32d8775b0621e04b3701d583521454b))
+* address coderabbitai review comments ([1bea4ec](https://github.com/homasvikaneria/career-pilot/commit/1bea4ecb6b7f99498b77874fbe95fce7db68d053))
+* resolve case-sensitive import error for SectionLabel on Linux runner ([75e56a4](https://github.com/homasvikaneria/career-pilot/commit/75e56a408f8b102e3b619ff2beb457709a07d350))
+* resolve duplicate Clock import error breaking the build ([144f696](https://github.com/homasvikaneria/career-pilot/commit/144f696192e9fffd4587f07fafb06d532d15846d))
+* resolve remaining case-sensitive import errors for SectionLabel ([039c432](https://github.com/homasvikaneria/career-pilot/commit/039c4328f0287fb52600e4e22ecda81118d26f68))
+
+
+### Features
+
+* add notes functionality to Job Tracker cards ([6237a7a](https://github.com/homasvikaneria/career-pilot/commit/6237a7a79a77f73a1ecae164c9b3acea1fff4ddd))
+* implement interview history and replay dashboards ([#434](https://github.com/homasvikaneria/career-pilot/issues/434)) ([7d08f8a](https://github.com/homasvikaneria/career-pilot/commit/7d08f8a8bdf2a525cd08c7e200eb49123fd60f3f))
+* **portfolio:** add Fluid Simulation 3D WebGL template ([6f98a6f](https://github.com/homasvikaneria/career-pilot/commit/6f98a6f31d1ccce4e611cf1de478901b4affb4ba))
+* **portfolio:** implement Origami_Unfold_Step_Animation portfolio template ([71c9ad0](https://github.com/homasvikaneria/career-pilot/commit/71c9ad03e0842869b14e078726557de05fadafb3))
+* **template:** add Commercial Pilot Cockpit interactive 3D portfolio template ([07f1629](https://github.com/homasvikaneria/career-pilot/commit/07f16290d2e27a304433f145eff87ed70e9e0adb))
+
 # [1.227.0](https://github.com/anurag3407/career-pilot/compare/v1.226.0...v1.227.0) (2026-06-12)
 
 
