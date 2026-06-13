@@ -1,3 +1,10 @@
+# [1.228.0](https://github.com/anurag3407/career-pilot/compare/v1.227.0...v1.228.0) (2026-06-13)
+
+
+### Features
+
+* implement endless runner minigame portfolio template ([5b0af76](https://github.com/anurag3407/career-pilot/commit/5b0af7696113a1cd74b944ad35eab2cc06f561f9))
+
 # [1.227.0](https://github.com/anurag3407/career-pilot/compare/v1.226.0...v1.227.0) (2026-06-12)
 
 
