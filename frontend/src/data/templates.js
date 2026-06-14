@@ -1336,6 +1336,18 @@ rating: 4.8,
     "createdAt": "2026-06-14"
   },
   {
+    "id": "Terminal_Skills",
+    "title": "Terminal Skills",
+    "category": "Portfolio",
+    "colorScheme": "Dark",
+    "layout": "Grid",
+    "author": "System",
+    "views": 99999999,
+    "rating": 5.0,
+    "image": "/template-previews/Terminal_Skills.png",
+    "createdAt": "2026-06-15"
+  },
+  {
     "id": "Glassmorphism",
     "title": "Glassmorphism",
     "category": "Portfolio",

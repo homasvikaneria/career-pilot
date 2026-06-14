@@ -127,6 +127,7 @@ import MichelinStarChefPlating from './components/portfolio/templates/Michelin_S
 import SommelierWineCellarRacks from './components/portfolio/templates/Sommelier_Wine_Cellar_Racks/index.jsx';
 import SharedResumeView from './pages/SharedResumeView.jsx'
 import MinimalDarkFluid from './components/portfolio/templates/Minimal_Dark_Fluid/index.jsx';
+import TerminalSkills from './components/portfolio/templates/Terminal_Skills/index.jsx';
 
 function LoadingScreen({ label }) {
   return (
@@ -301,6 +302,7 @@ function AppRoutes() {
         <Route path="/templates/michelin-star-chef-plating" element={<MichelinStarChefPlating />} />
         <Route path="/templates/sommelier-wine-cellar-racks" element={<SommelierWineCellarRacks />} />
         <Route path="/templates/minimal-dark-fluid" element={<MinimalDarkFluid />} />
+        <Route path="/templates/terminal-skills" element={<TerminalSkills />} />
         {/* Core Protected Routes */}
         <Route 
   path="/dashboard" 
