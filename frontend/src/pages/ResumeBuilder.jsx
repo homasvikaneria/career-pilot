@@ -83,6 +83,13 @@ export default function ResumeBuilder() {
   const [recommendedSkills, setRecommendedSkills] = useState([])
   const [profileScore, setProfileScore] = useState(0)
   const [profileIssues, setProfileIssues] = useState([])
+  const [impactScores, setImpactScores] = useState({
+  experience: 0,
+  projects: 0,
+  skills: 0,
+  education: 0,
+  achievements: 0
+})
 
   useEffect(() => {
   const suggestions = []
@@ -142,6 +149,47 @@ export default function ResumeBuilder() {
   setReadabilityScore(Math.max(score, 0))
   setClaritySuggestions(suggestions)
 }, [personal, experience, projects])
+
+useEffect(() => {
+  setImpactScores({
+    experience:
+      experience.some(
+        e =>
+          e.description &&
+          e.description.length > 50
+      )
+        ? 90
+        : 40,
+
+    projects:
+      projects.some(
+        p =>
+          p.description &&
+          p.description.length > 50
+      )
+        ? 80
+        : 30,
+
+    skills:
+      skills.trim().length > 20
+        ? 75
+        : 25,
+
+    education:
+      education.some(e => e.school)
+        ? 70
+        : 20,
+
+    achievements:
+      achievementScore
+  })
+}, [
+  experience,
+  projects,
+  skills,
+  education,
+  achievementScore
+])
 
 useEffect(() => {
   let score = 100
@@ -1310,6 +1358,37 @@ useEffect(() => {
     </span>
   )}
 
+</div>
+
+<div className="mb-6 p-4 rounded-xl border border-border bg-muted">
+  <h3 className="font-semibold mb-4">
+    Resume Content Impact Score
+  </h3>
+
+  {Object.entries(impactScores).map(
+    ([section, score]) => (
+      <div key={section} className="mb-4">
+        <div className="flex justify-between mb-1">
+          <span className="capitalize">
+            {section}
+          </span>
+
+          <span className="font-medium">
+            {score}/100
+          </span>
+        </div>
+
+        <div className="w-full bg-secondary rounded-full h-2">
+          <div
+            className="bg-primary h-2 rounded-full"
+            style={{
+              width: `${score}%`
+            }}
+          />
+        </div>
+      </div>
+    )
+  )}
 </div>
 
 <div className="mb-6 p-4 rounded-xl border border-border bg-muted">
