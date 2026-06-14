@@ -1,3 +1,45 @@
+# [1.1.0](https://github.com/homasvikaneria/career-pilot/compare/v1.0.0...v1.1.0) (2026-06-14)
+
+
+### Bug Fixes
+
+* add missing AI feedback fields to answerSchema ([#3484](https://github.com/homasvikaneria/career-pilot/issues/3484)) ([80e0d56](https://github.com/homasvikaneria/career-pilot/commit/80e0d56c65d777d8903b00059111786935556b92))
+* address codeant-ai review comments ([02c9270](https://github.com/homasvikaneria/career-pilot/commit/02c92705c32d8775b0621e04b3701d583521454b))
+* address coderabbitai review comments ([1bea4ec](https://github.com/homasvikaneria/career-pilot/commit/1bea4ecb6b7f99498b77874fbe95fce7db68d053))
+* resolve case-sensitive import error for SectionLabel on Linux runner ([75e56a4](https://github.com/homasvikaneria/career-pilot/commit/75e56a408f8b102e3b619ff2beb457709a07d350))
+* resolve duplicate Clock import error breaking the build ([144f696](https://github.com/homasvikaneria/career-pilot/commit/144f696192e9fffd4587f07fafb06d532d15846d))
+* resolve merge conflict in LinkedInOptimizer ([325cb93](https://github.com/homasvikaneria/career-pilot/commit/325cb9346729a40a51cc0be395616b7016f3cd90))
+* resolve remaining case-sensitive import errors for SectionLabel ([039c432](https://github.com/homasvikaneria/career-pilot/commit/039c4328f0287fb52600e4e22ecda81118d26f68))
+* resolve syntax error in templates data ([88eab63](https://github.com/homasvikaneria/career-pilot/commit/88eab634009508566675ea9fd033c3574700a1d2))
+* resolve templates data syntax issue ([0a80f8e](https://github.com/homasvikaneria/career-pilot/commit/0a80f8ec0629f481b99fdf23071563385d94332b))
+* resolve templates syntax error ([211c5e8](https://github.com/homasvikaneria/career-pilot/commit/211c5e864f0cada9d137b88a43bd8c910d030903))
+* resolve templates.js merge conflict ([72ed22c](https://github.com/homasvikaneria/career-pilot/commit/72ed22c683203bfc5f29649ed0c4bf6db9d70ab4))
+* **socket:** add polling fallback for blocked websockets ([0a0b494](https://github.com/homasvikaneria/career-pilot/commit/0a0b4940184c8ab06866f8fe6b66870abde291f7))
+* **socket:** address connection lifecycle review ([cf4c82c](https://github.com/homasvikaneria/career-pilot/commit/cf4c82c7197bed031217abc0621b78f2f713dca8))
+* **socket:** avoid user identifiers in transport logs ([e0e9d93](https://github.com/homasvikaneria/career-pilot/commit/e0e9d93791f895a52e054fa4867cb00a7f00d0a2))
+
+
+### Features
+
+* add Accordion Fold Brochure portfolio template ([18d2728](https://github.com/homasvikaneria/career-pilot/commit/18d2728af1325b0615b3241eb021e9defa910d44))
+* Add Autumn Forest Leaf Fall portfolio template ([#3185](https://github.com/homasvikaneria/career-pilot/issues/3185)) ([1b7e5a4](https://github.com/homasvikaneria/career-pilot/commit/1b7e5a47ce7ed26885dcd741d5386f4deea9f62c))
+* add Cartographer Antiquity Map Room template (fixes [#3212](https://github.com/homasvikaneria/career-pilot/issues/3212)) ([3ce340f](https://github.com/homasvikaneria/career-pilot/commit/3ce340f339dc013a84ae26fd420411d739aa34fb))
+* add IKEA Assembly Manual portfolio template ([3558afc](https://github.com/homasvikaneria/career-pilot/commit/3558afc97d67ebea2a582f290fcfc8c43c830681))
+* Add Image Export for Resume Previews (Fixes [#3515](https://github.com/homasvikaneria/career-pilot/issues/3515)) ([7745d5c](https://github.com/homasvikaneria/career-pilot/commit/7745d5c2fefba9e69f0c19086a2b102222303c2c))
+* Add Michelin Star Chef Plating template ([#3194](https://github.com/homasvikaneria/career-pilot/issues/3194)) ([752e0a5](https://github.com/homasvikaneria/career-pilot/commit/752e0a553ca7f3c1d4ee59c29b1ceeec650b9d58))
+* add notes functionality to Job Tracker cards ([6237a7a](https://github.com/homasvikaneria/career-pilot/commit/6237a7a79a77f73a1ecae164c9b3acea1fff4ddd))
+* add Physics Engine Gravity Drop portfolio template ([3bd87b1](https://github.com/homasvikaneria/career-pilot/commit/3bd87b14d371dfcfca5de9576d0009d7dee0f4aa))
+* add Sommelier Wine Cellar Racks portfolio template ([#3215](https://github.com/homasvikaneria/career-pilot/issues/3215)) ([c811e7a](https://github.com/homasvikaneria/career-pilot/commit/c811e7a0f0ae744714b3b08a4a9caad52446427d))
+* implement crossword puzzle word fill portfolio template with global context binding ([90c1c3f](https://github.com/homasvikaneria/career-pilot/commit/90c1c3f648dcfdeecc256b55a661649483f47f9b))
+* implement endless runner minigame portfolio template ([5b0af76](https://github.com/homasvikaneria/career-pilot/commit/5b0af7696113a1cd74b944ad35eab2cc06f561f9))
+* implement interview history and replay dashboards ([#434](https://github.com/homasvikaneria/career-pilot/issues/434)) ([7d08f8a](https://github.com/homasvikaneria/career-pilot/commit/7d08f8a8bdf2a525cd08c7e200eb49123fd60f3f))
+* **portfolio:** add Book_Page_Flip_3D_Render portfolio template ([ea7d25b](https://github.com/homasvikaneria/career-pilot/commit/ea7d25b2ce227b41d6e19e6da2308881e2b27e86))
+* **portfolio:** add Fluid Simulation 3D WebGL template ([6f98a6f](https://github.com/homasvikaneria/career-pilot/commit/6f98a6f31d1ccce4e611cf1de478901b4affb4ba))
+* **portfolio:** add Zen Bamboo Forest Wind template (closes [#3172](https://github.com/homasvikaneria/career-pilot/issues/3172)) ([511e792](https://github.com/homasvikaneria/career-pilot/commit/511e792cc3088f50852222d0f19d681c551cca31))
+* **portfolio:** implement Origami_Unfold_Step_Animation portfolio template ([71c9ad0](https://github.com/homasvikaneria/career-pilot/commit/71c9ad03e0842869b14e078726557de05fadafb3))
+* **template:** add Commercial Pilot Cockpit interactive 3D portfolio template ([07f1629](https://github.com/homasvikaneria/career-pilot/commit/07f16290d2e27a304433f145eff87ed70e9e0adb))
+* update website favicon ([33c9a55](https://github.com/homasvikaneria/career-pilot/commit/33c9a55852222b5163995e820fd373cfd4a8b102))
+
 # [1.239.0](https://github.com/anurag3407/career-pilot/compare/v1.238.0...v1.239.0) (2026-06-14)
 
 
