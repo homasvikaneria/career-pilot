@@ -257,6 +257,25 @@ export default function AppSidebar({ animate = true }) {
                                      />
                                  ))}
                              </div>
+
+    return (
+        <>
+            <Sidebar open={open} setOpen={setOpen}>
+                <SidebarBody className="justify-between gap-4 bg-card border-r border-border overflow-hidden">
+                    <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
+                        <Logo />
+                        <SidebarDivider />
+                        <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden pr-1">
+                            <div className="flex flex-col gap-1">
+                                {navLinks.map((link) => (
+                                    <SidebarLink
+                                        key={link.href}
+                                        link={link}
+                                        onClick={() => setOpen(false)}
+                                        className="text-muted-foreground hover:text-foreground hover:bg-muted font-semibold transition-all rounded-xl"
+                                    />
+                                ))}
+                            </div>
                             {/* AI Tools Collapsible */}
                             <div className="mt-2">
                                 <button
@@ -322,6 +341,18 @@ export default function AppSidebar({ animate = true }) {
 
                                     <SidebarLink
                                         link={{
+
+                                    <SidebarLink
+                                        link={{
+                                            label: "Salary Estimator",
+                                            href: "/salary-estimate",
+                                            icon: <Brain className="w-4 h-4 shrink-0" />,
+                                        }}
+                                        onClick={() => setOpen(false)}
+                                    />
+
+                                    <SidebarLink
+                                        link={{
                                             label: "Project Visualizer",
                                             href: "/project-visualizer",
                                             icon: <GitMerge className="w-4 h-4 shrink-0" />,
@@ -338,6 +369,8 @@ export default function AppSidebar({ animate = true }) {
                             className={cn(
                                 "flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 w-full cursor-pointer text-red-500 bg-red-500/10 hover:bg-red-500/20",
                                 !open && animate ? "px-0 justify-center" : "justify-start")}
+                                !open && animate ? "px-0 justify-center" : "justify-start"
+                            )}
                         >
                             <Bug className="w-5 h-5 shrink-0" />
                             <motion.span
@@ -359,6 +392,9 @@ export default function AppSidebar({ animate = true }) {
             <ReportBugModal
                 isOpen={isBugModalOpen}
                 onClose={() => setIsBugModalOpen(false)}
+            <ReportBugModal 
+                isOpen={isBugModalOpen} 
+                onClose={() => setIsBugModalOpen(false)} 
             />
         </>
     );
