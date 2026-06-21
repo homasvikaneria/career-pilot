@@ -1,3 +1,10 @@
+# [1.260.0](https://github.com/anurag3407/career-pilot/compare/v1.259.0...v1.260.0) (2026-06-21)
+
+
+### Features
+
+* add Audio Visualizer Frequency portfolio template ([#3522](https://github.com/anurag3407/career-pilot/issues/3522)) ([44d1004](https://github.com/anurag3407/career-pilot/commit/44d1004bc5b3f46ed395a587b9fc8743b4f60832))
+
 # [1.259.0](https://github.com/anurag3407/career-pilot/compare/v1.258.0...v1.259.0) (2026-06-21)
 
 
