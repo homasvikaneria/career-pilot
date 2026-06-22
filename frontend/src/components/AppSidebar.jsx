@@ -244,30 +244,11 @@ export default function AppSidebar({ animate = true }) {
             <Sidebar open={open} setOpen={setOpen} animate={animate}>
                 <SidebarBody className="justify-between gap-4 bg-card border-r border-border overflow-hidden">
                     <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
-                         <Logo />
-                         <SidebarDivider />
-                         <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden pr-1">
-                             <div className="flex flex-col gap-1">
-                                 {filteredNavLinks.map((link) => (
-                                     <SidebarLink
-                                         key={link.href}
-                                         link={link}
-                                         onClick={() => setOpen(false)}
-                                         className="text-muted-foreground hover:text-foreground hover:bg-muted font-semibold transition-all rounded-xl"
-                                     />
-                                 ))}
-                             </div>
-
-    return (
-        <>
-            <Sidebar open={open} setOpen={setOpen}>
-                <SidebarBody className="justify-between gap-4 bg-card border-r border-border overflow-hidden">
-                    <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
                         <Logo />
                         <SidebarDivider />
                         <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden pr-1">
                             <div className="flex flex-col gap-1">
-                                {navLinks.map((link) => (
+                                {filteredNavLinks.map((link) => (
                                     <SidebarLink
                                         key={link.href}
                                         link={link}

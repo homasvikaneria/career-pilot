@@ -348,8 +348,8 @@ const normalizedSkills = React.useMemo(() => {
 useEffect(() => {
   const certs = []
 
-  const role = targetRole.toLowerCase()
-  const skillText = skills.toLowerCase()
+  const role = (targetRole || '').toLowerCase()
+  const skillText = normalizedSkills.join(" ").toLowerCase()
 
   // Frontend
   if (
@@ -432,7 +432,7 @@ useEffect(() => {
   }
 
   setRecommendedCertifications([...new Set(certs)])
-}, [targetRole, skills])
+}, [targetRole, normalizedSkills])
 useEffect(() => {
   // 1. Gather all inputs into a clean string representation
   const resumeText = `${personal?.summary || ''} ${normalizedSkills.join(' ')} ${
@@ -1959,7 +1959,11 @@ useEffect(() => {
                         techStack: p.tech ? p.tech.split(',').map(s => s.trim()).filter(Boolean) : [],
                         link: p.link,
                       })),
-                      skills: skills ? skills.split(/[,\n]/).map(s => s.trim()).filter(Boolean) : [],
+                      skills: normalizedSkills,
+                      // Carry the drag-and-drop section order so the template
+                      // renders sections in the order chosen in the builder.
+                      sectionOrder,
+                      customSections: [],
                     }
                   }
                 })}

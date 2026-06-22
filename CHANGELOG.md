@@ -1,3 +1,24 @@
+# [1.262.0](https://github.com/anurag3407/career-pilot/compare/v1.261.0...v1.262.0) (2026-06-22)
+
+
+### Features
+
+* implement Infinite Canvas portfolio template ([#1878](https://github.com/anurag3407/career-pilot/issues/1878)) ([#4175](https://github.com/anurag3407/career-pilot/issues/4175)) ([bfd40d8](https://github.com/anurag3407/career-pilot/commit/bfd40d885c3af0f8cd6b05350c0f9564e0a99ad2))
+
+# [1.261.0](https://github.com/anurag3407/career-pilot/compare/v1.260.1...v1.261.0) (2026-06-22)
+
+
+### Features
+
+* integrate saved resumes into Cover Letter Generator ([#4205](https://github.com/anurag3407/career-pilot/issues/4205)) ([0e9851b](https://github.com/anurag3407/career-pilot/commit/0e9851bb6e9419abe70951a3bb504066d93a84e1))
+
+## [1.260.1](https://github.com/anurag3407/career-pilot/compare/v1.260.0...v1.260.1) (2026-06-22)
+
+
+### Bug Fixes
+
+* implement CSRF protection for Socket.IO and BullBoard ([#4283](https://github.com/anurag3407/career-pilot/issues/4283)) ([45284f1](https://github.com/anurag3407/career-pilot/commit/45284f16007b7f81fb52dddb283323e30e24bc66))
+
 ## [1.251.1](https://github.com/anurag3407/career-pilot/compare/v1.251.0...v1.251.1) (2026-06-20)
 
 
